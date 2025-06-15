@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { format } from "date-fns";
 import { ptBR } from "date-fns/locale";
 
@@ -37,9 +38,21 @@ export default function Home() {
   return (
     <div className="space-y-8">
       <section className="text-center py-12 bg-gray-50 rounded-lg">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">Bem-vindo ao Meu Portfólio</h1>
+        <div className="flex flex-col items-center justify-center mb-4">
+          <div className="w-40 h-24 flex items-center justify-center rounded-2xl shadow-2xl mb-2">
+            <Image
+              src="https://avatars.githubusercontent.com/u/94959646?s=400&u=20a9e6bdc634aee3c4447b2f9656369cf54c2d88&v=4"
+              alt="Samuel Cristian dos Santos"
+              width={160}
+              height={100}
+              className="object-cover rounded-xl"
+              priority
+            />
+          </div>
+        </div>
+        <h1 className="text-4xl font-bold text-gray-900 mb-4">samuelc-01 | blog</h1>
         <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-          Desenvolvedor | Técnico em Eletroeletrônica | C++ | Python<br />Divinópolis, Minas Gerais, Brasil
+          Developer | Electronics | C++ | Python<br /> Brasil 🇧🇷
         </p>
       </section>
       <div className="space-y-8">
