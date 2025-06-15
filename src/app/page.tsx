@@ -1,3 +1,22 @@
+/*
+  =============================================
+  Blog/Portfólio - samuelc-01
+  ---------------------------------------------
+  Este arquivo é a página inicial do blog/portfólio.
+  - Exibe um header com imagem, título e subtítulo.
+  - Lista os posts agrupados por ano e mês (arquivo cronológico).
+  - O array 'blogPosts' pode ser expandido para novos posts.
+  - Para cada post, crie uma página em /posts/[id]/page.tsx se desejar detalhes.
+
+  Dicas para devs:
+  - Para adicionar posts, basta inserir no array 'blogPosts' com data no formato YYYY-MM-DD.
+  - O agrupamento por ano/mês é automático.
+  - Para customizar o header, edite o bloco <section> principal.
+  - Para alterar o layout global, edite src/app/layout.tsx.
+  - Imagens externas precisam estar permitidas em next.config.js.
+  - Use Tailwind CSS para estilização rápida.
+  =============================================
+*/
 import Link from "next/link";
 import Image from "next/image";
 import { format } from "date-fns";

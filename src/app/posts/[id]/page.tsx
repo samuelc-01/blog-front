@@ -1,3 +1,17 @@
+/*
+  =============================================
+  Página de Post Individual - Blog/Portfólio samuelc-01
+  ---------------------------------------------
+  Este arquivo representa a página de detalhes de um post.
+  - Use para exibir conteúdo completo, imagens, links, etc.
+  - O parâmetro 'id' é dinâmico e corresponde ao post selecionado.
+
+  Dicas para devs:
+  - Personalize o layout e conteúdo conforme o tipo de post.
+  - Pode usar dados mockados ou integrar com backend futuramente.
+  - Use Tailwind CSS para estilização rápida.
+  =============================================
+*/
 import Image from "next/image";
 import Link from "next/link";
 

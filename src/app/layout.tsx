@@ -60,3 +60,19 @@ export default function RootLayout({
     </html>
   );
 }
+
+/*
+  =============================================
+  Layout Global - Blog/Portfólio samuelc-01
+  ---------------------------------------------
+  Este arquivo define o layout global do site (header, navegação, footer).
+  - O header inclui título, navegação, busca visual e link para o GitHub.
+  - O footer é padrão para todas as páginas.
+  - O conteúdo principal é renderizado via {children}.
+
+  Dicas para devs:
+  - Edite este arquivo para alterar navegação, header ou footer.
+  - Use Tailwind CSS para estilização rápida.
+  - Para páginas individuais, edite arquivos em src/app/page.tsx ou src/app/posts/[id]/page.tsx.
+  =============================================
+*/
