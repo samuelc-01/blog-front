@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "My Blog",
-  description: "A modern blog built with Next.js",
+  title: "samuelc-01",
+  description: "my contributions for the world",
 };
 
 export default function RootLayout({
@@ -20,7 +20,7 @@ export default function RootLayout({
         <header className="bg-white shadow-sm">
           <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
             <div className="flex items-center">
-              <a href="/" className="text-2xl font-bold text-gray-900">My Blog</a>
+              <a href="/" className="text-2xl font-bold text-gray-900">samuelc-01</a>
             </div>
             <div className="flex items-center space-x-4">
               <a href="/" className="text-gray-600 hover:text-gray-900">Home</a>
