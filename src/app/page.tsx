@@ -29,12 +29,30 @@ const currentMonth = format(now, "MMMM", { locale: ptBR });
 const blogPosts = [
   {
     id: 1,
-    title: "#1 Welcome",
-    excerpt: `Olá! Meu nome é Samuel Cristian dos Santos. Sou Desenvolvedor e Técnico em Eletroeletrônica, com experiência em C++, Python e automação industrial. Atuo em Divinópolis/MG e já trabalhei com suporte de TI, desenvolvimento de soluções, automações com microcontroladores e APIs, além de projetos freelance e estágio em tecnologia.\n\nTenho facilidade em depuração, solução de problemas e interfaces de programação. Também possuo inglês para trabalho profissional.\n\nEntre em contato: samuel.cristian17062004@gmail.com | +55 (37) 98854-9143 | [LinkedIn](https://www.linkedin.com/in/samuelcristian) | [GitHub](https://github.com/ceefast)`,
-    date: now.toISOString().slice(0, 10),
-    author: "Samuel Cristian dos Santos",
-    category: "Perfil Profissional",
-    image: "https://avatars.githubusercontent.com/u/94959646?s=400&u=20a9e6bdc634aee3c4447b2f9656369cf54c2d88&v=4",
+    title: "Journey Begins: Why I Study, Code, and Share",
+    excerpt: "In the world of software development, the pursuit of knowledge is just as essential as the code we write...",
+    date: "June 16, 2025",
+    author: "Samuel Cristian",
+    category: "Studies & Research",
+    image: "https://www.codedex.io/images/python/python-animated.gif"
+  },
+  {
+    id: 2,
+    title: "The Art of Clean Code",
+    excerpt: "Writing clean code is an art that every developer should master...",
+    date: "June 15, 2025",
+    author: "Samuel Cristian",
+    category: "Programming",
+    image: "https://www.codedex.io/images/python/python-animated.gif"
+  },
+  {
+    id: 3,
+    title: "Understanding React Hooks",
+    excerpt: "React Hooks have revolutionized how we write React components...",
+    date: "June 14, 2025",
+    author: "Samuel Cristian",
+    category: "React",
+    image: "https://www.codedex.io/images/python/python-animated.gif"
   },
 ];
 
@@ -54,41 +72,89 @@ function groupPostsByYearMonth(posts: typeof blogPosts) {
 const groupedPosts = groupPostsByYearMonth(blogPosts);
 
 export default function Home() {
+  // Get current year and month
+  const currentDate = new Date();
+  const currentYear = currentDate.getFullYear();
+  const currentMonth = currentDate.toLocaleString('default', { month: 'long' });
+
+  // Group posts by year and month
+  const postsByDate = blogPosts.reduce((acc, post) => {
+    const date = new Date(post.date);
+    const year = date.getFullYear();
+    const month = date.toLocaleString('default', { month: 'long' });
+    const key = `${year}-${month}`;
+    
+    if (!acc[key]) {
+      acc[key] = [];
+    }
+    acc[key].push(post);
+    return acc;
+  }, {} as Record<string, typeof blogPosts>);
+
+  // Get unique dates for the lateral section
+  const uniqueDates = Object.keys(postsByDate).sort((a, b) => {
+    const [yearA, monthA] = a.split('-');
+    const [yearB, monthB] = b.split('-');
+    return new Date(`${yearB}-${monthB}`).getTime() - new Date(`${yearA}-${monthA}`).getTime();
+  });
+
   return (
-    <div className="space-y-8">
-      <section className="text-center py-12 bg-gray-50 rounded-lg">
-        <div className="flex flex-col items-center justify-center mb-4">
-          <div className="w-40 h-24 flex items-center justify-center rounded-2xl shadow-2xl mb-2">
-            <Image
-              src="https://avatars.githubusercontent.com/u/94959646?s=400&u=20a9e6bdc634aee3c4447b2f9656369cf54c2d88&v=4"
-              alt="Samuel Cristian dos Santos"
-              width={160}
-              height={100}
-              className="object-cover rounded-xl"
-              priority
-            />
+    <div className="flex gap-8">
+      {/* Main content - centered posts */}
+      <div className="flex-1 max-w-3xl mx-auto">
+        <section className="mb-12">
+          <h2 className="text-2xl font-bold text-black mb-6">
+            {currentMonth} {currentYear}
+          </h2>
+          <div className="space-y-8">
+            {Object.entries(postsByDate).map(([date, posts]) => (
+              <div key={date} className="space-y-6">
+                {posts.map((post) => (
+                  <article key={post.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <div className="p-6">
+                      <div className="flex items-center text-sm text-black mb-4">
+                        <span className="font-medium">{post.date}</span>
+                        <span className="mx-2">•</span>
+                        <span className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                          {post.category}
+                        </span>
+                      </div>
+                      <Link href={`/posts/${post.id}`} className="block">
+                        <h3 className="text-xl font-bold text-black mb-2 hover:text-gray-700 transition-colors duration-200">
+                          {post.title}
+                        </h3>
+                      </Link>
+                      <p className="text-gray-600 mb-4">{post.excerpt}</p>
+                      <div className="flex items-center text-sm text-black">
+                        <span className="font-medium">By {post.author}</span>
+                      </div>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            ))}
           </div>
-        </div>
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">samuelc-01 | blog</h1>
-        <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-          Developer | Electronics | C++ | Python<br /> Brasil 🇧🇷
-        </p>
-      </section>
-      <div className="space-y-8">
-        <div>
-          <div className="mb-6">
-            <h2 className="text-2xl font-bold mt-6 mb-2 text-black">{currentYear} - {currentMonth.charAt(0).toUpperCase() + currentMonth.slice(1)}</h2>
-            <ul className="list-disc list-inside space-y-2">
-              {groupedPosts[currentYear]?.[currentMonth]?.map((post) => (
-                <li key={post.id} className="text-black">
-                  <Link href={`/posts/${post.id}`} className="text-blue-600 hover:underline">
-                    {post.title}
-                  </Link>
-                  <span className="text-black text-sm ml-2">({format(new Date(post.date), 'dd/MM/yyyy')})</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+        </section>
+      </div>
+
+      {/* Lateral section with date filters */}
+      <div className="w-64 hidden lg:block">
+        <div className="sticky top-8">
+          <h3 className="text-lg font-semibold text-black mb-4">On this page:</h3>
+          <nav className="space-y-2">
+            {uniqueDates.map((date) => {
+              const [year, month] = date.split('-');
+              return (
+                <a
+                  key={date}
+                  href={`#${date}`}
+                  className="block text-black hover:text-gray-700 transition-colors duration-200"
+                >
+                  {year} - {month}
+                </a>
+              );
+            })}
+          </nav>
         </div>
       </div>
     </div>

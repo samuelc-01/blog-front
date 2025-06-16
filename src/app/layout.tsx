@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
-import { FiRss } from "react-icons/fi";
+import SourceCodeViewer from "./components/SourceCodeViewer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -42,9 +42,7 @@ export default function RootLayout({
                   CTRL K
                 </span>
               </div>
-              <a href="https://github.com/samuelc-01" target="_blank" rel="noopener noreferrer" className="ml-2 text-gray-700 hover:text-black text-2xl" title="GitHub">
-                <FiRss />
-              </a>
+              <SourceCodeViewer />
             </div>
           </nav>
         </header>

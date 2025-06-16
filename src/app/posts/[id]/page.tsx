@@ -43,12 +43,6 @@ My name is Samuel Cristian, and I began my path in development through an intern
 > "We must build systems that encourage thinking, not substitute for it."  
 > — **Bret Victor**
 
-## About Me
-
-- 💻 Fullstack Developer | React.js, Next.js, Node.js, FastAPI  
-- ⚙️ Electronics Technician focused on automation and networks  
-- 🛠️ Passionate about efficient, secure, and well-documented systems  
-- 🧠 Lifelong learner, driven by philosophical restlessness
 
 *Post number 1.*`,
     date: "June 16, 2025",
