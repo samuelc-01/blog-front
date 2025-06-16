@@ -1,6 +1,6 @@
-# samuelc-01 Blog/Portfólio
+# samuelc-01 Blog
 
-Este projeto é um blog/portfólio pessoal desenvolvido com Next.js, TypeScript e Tailwind CSS. Ele serve como base para quem deseja criar um portfólio moderno, organizado por ano/mês, e facilmente extensível para novos posts.
+Este projeto é um blog pessoal desenvolvido com Next.js, TypeScript e Tailwind CSS. Ele serve como base para quem deseja criar um portfólio moderno, organizado por ano/mês, e facilmente extensível para novos posts.
 
 ## Funcionalidades
 - Página inicial com posts agrupados por ano e mês (arquivo cronológico)
