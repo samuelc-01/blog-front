@@ -77,14 +77,14 @@ export default function Home() {
       <div className="space-y-8">
         <div>
           <div className="mb-6">
-            <h2 className="text-2xl font-bold mt-6 mb-2">{currentYear} - {currentMonth.charAt(0).toUpperCase() + currentMonth.slice(1)}</h2>
+            <h2 className="text-2xl font-bold mt-6 mb-2 text-black">{currentYear} - {currentMonth.charAt(0).toUpperCase() + currentMonth.slice(1)}</h2>
             <ul className="list-disc list-inside space-y-2">
               {groupedPosts[currentYear]?.[currentMonth]?.map((post) => (
-                <li key={post.id}>
+                <li key={post.id} className="text-black">
                   <Link href={`/posts/${post.id}`} className="text-blue-600 hover:underline">
                     {post.title}
                   </Link>
-                  <span className="text-gray-500 text-sm ml-2">({format(new Date(post.date), 'dd/MM/yyyy')})</span>
+                  <span className="text-black text-sm ml-2">({format(new Date(post.date), 'dd/MM/yyyy')})</span>
                 </li>
               ))}
             </ul>
