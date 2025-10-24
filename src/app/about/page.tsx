@@ -70,22 +70,22 @@ export default function About() {
         <h2 className="text-xl font-bold text-black mb-4">About</h2>
         <div className="prose prose-lg max-w-none text-black">
           <p>
-            Desenvolvedor e Técnico em Eletroeletrônica com foco em soluções inovadoras. 
-            Minha jornada começou com C++ e Python, expandindo para automação industrial 
-            e desenvolvimento web moderno.
+           Electronics developer and technician focused on innovative solutions. 
+           My journey began with C++ and Python, 
+           expanding into industrial automation and modern web development.
           </p>
           <p>
-            Especializado em:
+            Specialized in:
           </p>
           <ul className="list-disc list-inside">
-            <li>Desenvolvimento Full Stack (React, Next.js, Node.js)</li>
-            <li>Automação Industrial e Microcontroladores</li>
-            <li>Desenvolvimento de APIs e Integrações</li>
+            <li>Full Stack Development (React, Next.js, Node.js)</li>
+            <li>Industrial Automation and Microcontrollers</li>
+            <li>API and Integration Development</li>
             <li>Suporte Técnico e Solução de Problemas</li>
           </ul>
           <p>
-            Atualmente trabalhando em projetos que combinam eletrônica e software, 
-            buscando sempre aprender e compartilhar conhecimento através deste blog.
+            Currently working on projects that combine electronics and software,
+             always seeking to learn and share knowledge through this blog.
           </p>
         </div>
       </div>
